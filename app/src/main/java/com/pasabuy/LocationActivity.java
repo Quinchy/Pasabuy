@@ -99,6 +99,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             if (message.equals("User registered successfully!")) {
                 // Proceed to PasabuyAppActivity
+                updateNewUserFlag();
                 Intent intent = new Intent(LocationActivity.this, PasabuyAppActivity.class);
                 startActivity(intent);
                 finish();
@@ -141,7 +142,12 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         // Request location permission and get current location
         getLocationPermission();
     }
-
+    private void updateNewUserFlag() {
+        SharedPreferences prefs = getSharedPreferences("PasabuyApp", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("isNewUser", false);
+        editor.apply();
+    }
     private void getLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationPermissionGranted = true;

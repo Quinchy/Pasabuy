@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sd_pro_rounded_semibold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingBottom="16dp"
+        android:text="Delete Account"
+        android:textColor="@color/red_1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sd_pro_rounded_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingBottom="24dp"
+        android:text="Are you sure you want to delete your account? This action cannot be undone."
+        android:textColor="@color/cyan_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/yesButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/red_rounded_corner_button_background"
+            android:text="Yes"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/noButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_rounded_outline_background"
+            android:text="No"
+            android:textColor="@color/red_1" />
+    </LinearLayout>
+</LinearLayout>

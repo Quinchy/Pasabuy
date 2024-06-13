@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/white"/> <!-- You can change the color -->
+            <size
+                android:width="120dp"
+                android:height="120dp"/> <!-- Adjust the size as needed -->
+        </shape>
+    </item>
+</ripple>

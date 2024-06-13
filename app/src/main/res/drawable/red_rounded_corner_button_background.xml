@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/red_1"/>
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+    <item>
+        <ripple android:color="?android:attr/colorControlHighlight">
+            <item>
+                <shape>
+                    <solid android:color="@color/red_1"/>
+                    <corners android:radius="24dp"/>
+                </shape>
+            </item>
+        </ripple>
+    </item>
+</layer-list>

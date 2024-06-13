@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Pasabuy" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/cyan_1</item>
+        <item name="colorPrimaryDark">@color/cyan_1</item>
+        <item name="colorAccent">@color/cyan_1</item>
+        <item name="android:statusBarColor">@color/red_1</item>
+        <item name="android:navigationBarColor">@color/red_1</item>
+    </style>
+    <style name="ViewPostActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/red_1</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+</resources>

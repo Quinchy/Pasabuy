@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/outline_top_bottom_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_top_bottom_background"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                    android:includeFontPadding="false"
+                    android:text="You have rated:"
+                    android:textColor="@color/cyan_1"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/order_post_user_profilePicture_userRating"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder_profile" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/order_post_user_fullName_userRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/sd_pro_rounded_semibold"
+                        android:includeFontPadding="false"
+                        android:text="Carl Andrei Tallorin"
+                        android:textColor="@color/cyan_1"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/order_post_user_username_userRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sd_pro_rounded_regular"
+                        android:includeFontPadding="false"
+                        android:text="\@Jokarl"
+                        android:textColor="@color/cyan_2"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:includeFontPadding="false"
+                android:text="For ordering:"
+                android:textColor="@color/cyan_1"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:id="@+id/order_post_thumbnail_userRating"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/placeholder_product" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/order_post_title_userRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sd_pro_rounded_semibold"
+                        android:includeFontPadding="false"
+                        android:text="Diwata Pares Overload"
+                        android:textColor="@color/cyan_1"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/order_quantity_userRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sd_pro_rounded_regular"
+                        android:includeFontPadding="false"
+                        android:text="Quantity: 2"
+                        android:textColor="@color/cyan_1"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/order_totalPrice_userRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sd_pro_rounded_regular"
+                        android:includeFontPadding="false"
+                        android:text="Total: ₱300"
+                        android:textColor="@color/cyan_1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:includeFontPadding="false"
+                android:text="With:"
+                android:textColor="@color/cyan_1"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/star_rating_container_userRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/star_rating_1_userRating"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/red_star_icon" />
+
+                <ImageView
+                    android:id="@+id/star_rating_2_userRating"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/red_star_icon" />
+
+                <ImageView
+                    android:id="@+id/star_rating_3_userRating"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/red_star_icon" />
+
+                <ImageView
+                    android:id="@+id/star_rating_4_userRating"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/red_star_icon" />
+
+                <ImageView
+                    android:id="@+id/star_rating_5_userRating"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/red_star_icon" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

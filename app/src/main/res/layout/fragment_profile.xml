@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_background">
+
+            <LinearLayout
+                android:id="@+id/profilePictureAndNameContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingTop="40dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/profilePicture"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="0"
+                    android:src="@drawable/placeholder_profile" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0"
+                    android:gravity="center|start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userFullName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/sd_pro_rounded_semibold"
+                        android:includeFontPadding="false"
+                        android:text="Fullname"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/sd_pro_rounded_semibold"
+                        android:includeFontPadding="false"
+                        android:text="\@Username"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileSettingsCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-15dp"
+                android:elevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profilePictureAndNameContainer">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/postSettingsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/postSettingsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                            android:includeFontPadding="false"
+                            android:paddingStart="30dp"
+                            android:paddingTop="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="10dp"
+                            android:text="Post Settings"
+                            android:textColor="@color/cyan_1"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/myPostSettingContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/outline_top_bottom_background"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="30dp"
+                            android:paddingTop="15dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:id="@+id/myPostIcon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/my_post_icon" />
+
+                            <LinearLayout
+                                android:id="@+id/myPostTitleDescContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/myPostTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                                    android:includeFontPadding="false"
+                                    android:text="My Post"
+                                    android:textColor="@color/cyan_1" />
+
+                                <TextView
+                                    android:id="@+id/myPostDescription"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="Manage pasabuy you posted"
+                                    android:textColor="@color/cyan_2" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/accountSettingsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/accountSettingsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                            android:includeFontPadding="false"
+                            android:paddingStart="30dp"
+                            android:paddingTop="40dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="10dp"
+                            android:text="Account Settings"
+                            android:textColor="@color/cyan_1"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/myAccountSettingContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/outline_top_bottom_background"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="30dp"
+                            android:paddingTop="15dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:id="@+id/myAccountIcon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/my_account_icon" />
+
+                            <LinearLayout
+                                android:id="@+id/myAccountTitleDescContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/myAccountTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                                    android:includeFontPadding="false"
+                                    android:text="My Account"
+                                    android:textColor="@color/cyan_1" />
+
+                                <TextView
+                                    android:id="@+id/myAccountDescription"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="Make changes to your account"
+                                    android:textColor="@color/cyan_2" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myRatingsSettingContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:background="@drawable/outline_top_bottom_background"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="30dp"
+                            android:paddingTop="15dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:id="@+id/myRatingsIcon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/my_ratings_icon" />
+
+                            <LinearLayout
+                                android:id="@+id/myRatingsTitleDescContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/myRatingsTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                                    android:includeFontPadding="false"
+                                    android:text="My Ratings"
+                                    android:textColor="@color/cyan_1" />
+
+                                <TextView
+                                    android:id="@+id/myRatingsDescription"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="See users you rated"
+                                    android:textColor="@color/cyan_2" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/orderHistorySettingContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:background="@drawable/outline_top_bottom_background"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="30dp"
+                            android:paddingTop="15dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:id="@+id/orderHistoryIcon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/order_history_icon" />
+
+                            <LinearLayout
+                                android:id="@+id/orderHistoryTitleDescContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/orderHistoryTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                                    android:includeFontPadding="false"
+                                    android:text="Order History"
+                                    android:textColor="@color/cyan_1" />
+
+                                <TextView
+                                    android:id="@+id/orderHistoryDescription"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="View all your pasabuy orders"
+                                    android:textColor="@color/cyan_2" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/otherSettingsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/otherSettingsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                            android:includeFontPadding="false"
+                            android:paddingStart="30dp"
+                            android:paddingTop="40dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="10dp"
+                            android:text="Other Settings"
+                            android:textColor="@color/cyan_1"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/helpSupportSettingContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/outline_top_bottom_background"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="30dp"
+                            android:paddingTop="15dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:id="@+id/helpSupportIcon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/help_support_icon" />
+
+                            <LinearLayout
+                                android:id="@+id/helpSupportTitleDescContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/helpSupportTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                                    android:includeFontPadding="false"
+                                    android:text="Help &amp; Support"
+                                    android:textColor="@color/cyan_1" />
+
+                                <TextView
+                                    android:id="@+id/helpSupportDescription"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="Ask about FAQ"
+                                    android:textColor="@color/cyan_2" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/signOutButton"
+                        android:layout_width="271dp"
+                        android:layout_height="58dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="90dp"
+                        android:background="@drawable/red_rounded_outline_background"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/signOutIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/sign_out_icon" />
+
+                        <TextView
+                            android:id="@+id/signOutText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                            android:text="Sign Out"
+                            android:textAllCaps="false"
+                            android:textColor="@color/red_1"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

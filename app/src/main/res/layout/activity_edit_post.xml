@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".EditPostActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backButtonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButtonEditPost"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="26dp"
+            android:background="@drawable/circular_button_background"
+            android:contentDescription="Back"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/back_button_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editPostText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="26dp"
+            android:fontFamily="@font/sd_pro_rounded_semibold"
+            android:text="Edit Post"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/editPostScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButtonContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editPostContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_background"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="70dp">
+
+            <TextView
+                android:id="@+id/uploadPhotoLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Upload Photo"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/photoButtonAndImageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/uploadPhotoLabelEditPost"
+                tools:layout_editor_absoluteX="20dp">
+
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/upload_photo_background"
+                    android:gravity="center|center_horizontal">
+
+                    <Button
+                        android:id="@+id/uploadPhotoButtonEditPost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/sd_pro_rounded_semibold"
+                        android:text="+ Add Photos"
+                        android:textAllCaps="false"
+                        android:textColor="@color/cyan_4" />
+                </FrameLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/photoScrollViewEditPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:id="@+id/photoContainerEditPost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Here is where the photo_card.xml will be place and populated -->
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/titleLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Title"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photoButtonAndImageContainer" />
+
+            <EditText
+                android:id="@+id/titleEditTextEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_text_input"
+                android:hint="Title of Post"
+                android:inputType="text"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/cyan_1"
+                android:textColorHint="@color/cyan_2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleLabelEditPost" />
+
+            <TextView
+                android:id="@+id/descriptionLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Description"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditTextEditPost" />
+
+            <EditText
+                android:id="@+id/descriptionEditTextEditPost"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:background="@drawable/rounded_border_text_input"
+                android:gravity="top"
+                android:hint="Description of Post"
+                android:inputType="textMultiLine"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/cyan_1"
+                android:textColorHint="@color/cyan_2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionLabelEditPost" />
+
+            <TextView
+                android:id="@+id/priceLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Price"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionEditTextEditPost" />
+
+            <EditText
+                android:id="@+id/priceEditTextEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_text_input"
+                android:hint="Price of Product"
+                android:inputType="numberDecimal"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/cyan_1"
+                android:textColorHint="@color/cyan_2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceLabelEditPost" />
+
+            <TextView
+                android:id="@+id/categoryLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Category"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceEditTextEditPost" />
+
+            <LinearLayout
+                android:id="@+id/categoryLayoutEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline_bottom_background"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryLabelEditPost">
+
+                <Spinner
+                    android:id="@+id/categorySpinnerEditPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/category_array"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/categoryLabelEditPost" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/deadlineDateLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Deadline Date"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryLayoutEditPost" />
+
+            <DatePicker
+                android:id="@+id/deadlineDatePickerEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deadlineDateLabelEditPost" />
+
+            <TextView
+                android:id="@+id/deadlineTimeLabelEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Deadline Time"
+                android:textColor="@color/cyan_1"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deadlineDatePickerEditPost" />
+
+            <TimePicker
+                android:id="@+id/deadlineTimePickerEditPost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deadlineTimeLabelEditPost" />
+
+            <Button
+                android:id="@+id/submitButtonEditPost"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/red_rounded_corner_button_background"
+                android:fontFamily="@font/sd_pro_rounded_semibold"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deadlineTimePickerEditPost" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

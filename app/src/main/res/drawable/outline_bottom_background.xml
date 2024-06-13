@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+
+    <item>
+        <layer-list>
+            <item
+                android:right="-2dp"
+                android:left="-2dp"
+                android:top="-2dp">
+                <shape android:layout_width="wrap_content">
+                    <solid android:color="@color/white" />
+                    <stroke
+                        android:width="2dp"
+                        android:color="@color/cyan_4" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</ripple>

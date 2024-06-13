@@ -1,0 +1,17 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" /> <!-- White background -->
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/cyan_4"
+        android:dashWidth="10dp"
+        android:dashGap="5dp" /> <!-- Dashed cyan outline -->
+
+    <corners android:radius="8dp" /> <!-- Adjust corner radius as needed -->
+
+    <padding
+        android:left="16dp"
+        android:top="8dp"
+        android:right="16dp"
+        android:bottom="8dp" />
+</shape>

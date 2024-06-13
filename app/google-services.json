@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "844863033338",
+    "firebase_url": "https://pasabuy-4d489-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "pasabuy-4d489",
+    "storage_bucket": "pasabuy-4d489.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844863033338:android:9d1d3c13a8fd91fe335e43",
+        "android_client_info": {
+          "package_name": "com.pasabuy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOb7woWqDofENkR3iWSu2J2kT-qBSBogc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

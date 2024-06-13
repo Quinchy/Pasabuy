@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ManageCustomerActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/backButtonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/backButtonManageCustomer"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="26dp"
+                    android:background="@drawable/circular_button_background"
+                    android:contentDescription="Back"
+                    android:elevation="4dp"
+                    android:padding="8dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/back_button_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/manageCustomerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="26dp"
+                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                    android:text="Manage Customer"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="790dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backButtonContainer">
+
+                <LinearLayout
+                    android:id="@+id/manageCustomerContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/manageCustomerContentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/customerManageCustomerText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                            android:includeFontPadding="false"
+                            android:text="Customer"
+                            android:textColor="@color/cyan_1"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:id="@+id/customerInformationManagePostContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/customerProfileManagePost"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/placeholder_profile" />
+
+                            <LinearLayout
+                                android:id="@+id/customerFullNameUsernameManagePostContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/customerFullNameManagePostText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_semibold"
+                                    android:includeFontPadding="false"
+                                    android:text="Carl Andrei Tallorin"
+                                    android:textColor="@color/cyan_1" />
+
+                                <TextView
+                                    android:id="@+id/customerUsernameManagePostText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sd_pro_rounded_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="\@Jokarl"
+                                    android:textColor="@color/cyan_1" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/clickToMessageManagePostButton"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginEnd="20dp"
+                                android:background="@android:color/transparent"
+                                app:srcCompat="@drawable/click_to_message_icon" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/customerOrderInformationManagePostContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/customerOrderManageCustomerText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/sd_pro_rounded_semibold"
+                                android:includeFontPadding="false"
+                                android:text="Order"
+                                android:textColor="@color/cyan_1"
+                                android:textSize="16sp" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="2dp"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:padding="15dp">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        app:cardCornerRadius="16dp">
+
+                                        <ImageView
+                                            android:id="@+id/imageView3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="centerCrop"
+                                            app:srcCompat="@drawable/placeholder_product" />
+                                    </androidx.cardview.widget.CardView>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/orderTitleManagePost"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                                            android:includeFontPadding="false"
+                                            android:text="Diwata Pares Overload"
+                                            android:textColor="@color/cyan_1"
+                                            android:textSize="16sp" />
+
+                                        <TextView
+                                            android:id="@+id/orderPriceManagePost"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                                            android:includeFontPadding="false"
+                                            android:text="₱ 150"
+                                            android:textColor="@color/cyan_1"
+                                            android:textSize="18sp" />
+
+                                        <TextView
+                                            android:id="@+id/orderQuantityManagePost"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sd_pro_rounded_regular"
+                                            android:includeFontPadding="true"
+                                            android:text="Quantity: 2"
+                                            android:textColor="@color/cyan_2" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/customerAddressInformationManagePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/customerAddressText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sd_pro_rounded_semibold"
+                                android:includeFontPadding="false"
+                                android:text="Address"
+                                android:textColor="@color/cyan_1"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/editTextText2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/outline_bottom_background"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:ems="10"
+                                android:fontFamily="@font/sd_pro_rounded_regular"
+                                android:includeFontPadding="false"
+                                android:inputType="text"
+                                android:paddingStart="10dp"
+                                android:paddingTop="18dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="18dp"
+                                android:text="Name"
+                                android:textColor="@color/cyan_1"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/customerStatusText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/customerAddressManagePostContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sd_pro_rounded_semibold"
+                                android:includeFontPadding="false"
+                                android:text="Status"
+                                android:textColor="@color/cyan_1"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:id="@+id/statusCategoryLayoutManagePost"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/outline_bottom_background"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/categoryLabel">
+
+                                <Spinner
+                                    android:id="@+id/statusCategorySpinnerManagePost"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:entries="@array/category_array"
+                                    android:paddingStart="15dp"
+                                    android:paddingTop="15dp"
+                                    android:paddingEnd="15dp"
+                                    android:paddingBottom="15dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/categoryLabel" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/updateCustomerButton"
+                            android:layout_width="271dp"
+                            android:layout_height="58dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="60dp"
+                            android:layout_marginBottom="50dp"
+                            android:background="@drawable/red_rounded_corner_button_background"
+                            android:fontFamily="@font/sd_pro_rounded_semibold"
+                            android:includeFontPadding="false"
+                            android:text="Update Status"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

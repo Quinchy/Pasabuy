@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Red Shades -->
+    <color name="red_1">#D80032</color>
+    <color name="red_2">#E24065</color>
+    <color name="red_3">#EC8099</color>
+    <color name="red_4">#F5BFCB</color>
+    <color name="red_5">#FCE6EB</color>
+    <!-- Yellow Shades -->
+    <color name="yellow_1">#FECB0F</color>
+    <color name="yellow_2">#FED84B</color>
+    <color name="yellow_3">#FFE587</color>
+    <color name="yellow_4">#FEF2C3</color>
+    <color name="yellow_5">#FFFAE7</color>
+    <!-- Dark Cyan Shades -->
+    <color name="cyan_1">#003039</color>
+    <color name="cyan_2">#40646B</color>
+    <color name="cyan_3">#80989C</color>
+    <color name="cyan_4">#BFCBCD</color>
+    <color name="cyan_5">#E6EBEC</color>
+    <color name="cyan_6">#F2F4F5</color>
+    <!-- Others -->
+    <color name="white">#FFFFFF</color>
+</resources>

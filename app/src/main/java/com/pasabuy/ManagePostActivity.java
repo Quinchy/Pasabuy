@@ -152,7 +152,7 @@ public class ManagePostActivity extends AppCompatActivity {
                     addRequestOrderToContainer(order);
                 }
             } else {
-                if (order.getStatus().equals("Confirmed") || order.getStatus().equals("Buying") || order.getStatus().equals("Delivering")) {
+                if (order.getStatus().equals("Buying") || order.getStatus().equals("Delivering")) {
                     addCustomerOrderToContainer(order);
                 }
             }
@@ -190,7 +190,7 @@ public class ManagePostActivity extends AppCompatActivity {
         ImageButton checkButton = requestView.findViewById(R.id.check_button);
         ImageButton crossButton = requestView.findViewById(R.id.cross_button);
 
-        checkButton.setOnClickListener(v -> updateOrderStatus(order.getOrderID(), "Confirmed"));
+        checkButton.setOnClickListener(v -> updateOrderStatus(order.getOrderID(), "Buying"));
         crossButton.setOnClickListener(v -> updateOrderStatus(order.getOrderID(), "Declined"));
 
         // Add the requestView to the container

@@ -8,7 +8,6 @@
         <item>Item</item>
     </string-array>
     <string-array name="status_array">
-        <item>Confirmed</item>
         <item>Buying</item>
         <item>Delivering</item>
         <item>Delivered</item>

@@ -197,6 +197,13 @@ public class ViewOrderActivity extends AppCompatActivity {
                     messageIntent.putExtra("userID", user.getUserID());
                     startActivity(messageIntent);
                 });
+
+                // Set the OnClickListener to the profile picture
+                profilePictureImageOrderStatus.setOnClickListener(v -> {
+                    Intent profileIntent = new Intent(ViewOrderActivity.this, ProfileDisplayActivity.class);
+                    profileIntent.putExtra("userID", user.getUserID());
+                    startActivity(profileIntent);
+                });
             }
         });
     }

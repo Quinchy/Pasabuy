@@ -93,6 +93,13 @@ public class ManageCustomerActivity extends AppCompatActivity {
                 if (user != null) {
                     populateUserDetails(user);
                     manageCustomerViewModel.fetchAddressDetails(user.getAddressID());
+
+                    // Set the OnClickListener to the profile picture
+                    customerProfileImage.setOnClickListener(v -> {
+                        Intent profileIntent = new Intent(ManageCustomerActivity.this, ProfileDisplayActivity.class);
+                        profileIntent.putExtra("userID", user.getUserID());
+                        startActivity(profileIntent);
+                    });
                 }
             }
         });

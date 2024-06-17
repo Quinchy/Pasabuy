@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.pasabuy.models.Post;
 import com.pasabuy.viewmodels.ProfileDisplayViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileDisplayActivity extends AppCompatActivity {
@@ -25,6 +28,7 @@ public class ProfileDisplayActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private LinearLayout pasabuyCardsProfileDisplayContainer;
     private String selectedCategory = "All";
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +42,15 @@ public class ProfileDisplayActivity extends AppCompatActivity {
         profileDisplayViewModel = new ViewModelProvider(this).get(ProfileDisplayViewModel.class);
         db = FirebaseFirestore.getInstance();
 
-        String userId = getIntent().getStringExtra("userID");
+        userId = getIntent().getStringExtra("userID");
 
         pasabuyCardsProfileDisplayContainer = findViewById(R.id.pasabuyCardsProfileDisplayContainer);
 
         loadUserProfile(userId);
         loadUserPosts(userId, selectedCategory);
         setupFilterButtons(userId);
+        setupSearchFunctionality();
+        setupSendMessageButton();
     }
 
     private void loadUserProfile(String userId) {
@@ -66,10 +72,17 @@ public class ProfileDisplayActivity extends AppCompatActivity {
             usernameView.setText("@" + username);
             profileDisplayText.setText(firstName + "'s Profile");
 
-            Glide.with(this)
-                    .load(profilePictureURL)
-                    .circleCrop()
-                    .into(userProfilePicture);
+            if (profilePictureURL == null || profilePictureURL.isEmpty()) {
+                Glide.with(this)
+                        .load(R.drawable.placeholder_profile)
+                        .circleCrop()
+                        .into(userProfilePicture);
+            } else {
+                Glide.with(this)
+                        .load(profilePictureURL)
+                        .circleCrop()
+                        .into(userProfilePicture);
+            }
         });
     }
 
@@ -129,7 +142,11 @@ public class ProfileDisplayActivity extends AppCompatActivity {
 
             userFullNameInPost.setText(fullName);
             userRatingsInPost.setText(String.valueOf(rating));
-            Glide.with(this).load(profilePictureURL).circleCrop().into(profilePictureImage);
+            if (profilePictureURL == null || profilePictureURL.isEmpty()) {
+                Glide.with(this).load(R.drawable.placeholder_profile).circleCrop().into(profilePictureImage);
+            } else {
+                Glide.with(this).load(profilePictureURL).circleCrop().into(profilePictureImage);
+            }
         });
 
         noOfPeopleJoined.setText(String.valueOf(post.getJoinedUserIDs().size()));
@@ -179,6 +196,51 @@ public class ProfileDisplayActivity extends AppCompatActivity {
         filterAll.setOnClickListener(filterClickListener);
         filterFoods.setOnClickListener(filterClickListener);
         filterItems.setOnClickListener(filterClickListener);
+    }
+
+    private void setupSearchFunctionality() {
+        EditText searchEditText = findViewById(R.id.searchEditTextProfileDisplay);
+        ImageView searchIcon = findViewById(R.id.searchIconProfileDisplay);
+
+        searchIcon.setOnClickListener(v -> performSearch(searchEditText.getText().toString()));
+        searchEditText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                performSearch(searchEditText.getText().toString());
+                return true;
+            }
+            return false;
+        });
+    }
+
+    private void performSearch(String query) {
+        if (!query.isEmpty()) {
+            db.collection("posts")
+                    .whereEqualTo("userID", userId)
+                    .whereEqualTo("status", "Open")
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            List<Post> postList = task.getResult().toObjects(Post.class);
+                            List<Post> filteredList = new ArrayList<>();
+                            for (Post post : postList) {
+                                if (post.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                                        post.getDescription().toLowerCase().contains(query.toLowerCase())) {
+                                    filteredList.add(post);
+                                }
+                            }
+                            filterAndDisplayPosts(filteredList, selectedCategory);
+                        }
+                    });
+        }
+    }
+
+    private void setupSendMessageButton() {
+        ImageButton sendMessageButtonProfile = findViewById(R.id.sendMessageButtonProfile);
+        sendMessageButtonProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileDisplayActivity.this, ViewMessageActivity.class);
+            intent.putExtra("userID", userId);
+            startActivity(intent);
+        });
     }
 
     private void updateFilterButtonState(LinearLayout filterButton, int iconResId, int textColorResId) {

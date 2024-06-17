@@ -79,23 +79,22 @@ public class ViewPostActivity extends AppCompatActivity {
             // Setup UI
             setupUI();
 
-            // Fetch post and user details
+            // Fetch post details
             viewPostViewModel.fetchPostDetails(postID);
             viewPostViewModel.getPostLiveData().observe(this, post -> {
                 if (post != null) {
                     currentPost = post;
                     // Populate post details
                     populatePostDetails(post);
-                    // Fetch user details
+                    // Fetch user details (post creator)
                     viewPostViewModel.fetchUserDetails(post.getUserID());
                 }
             });
+
             viewPostViewModel.getUserLiveData().observe(this, user -> {
                 if (user != null) {
                     // Populate user details
                     populateUserDetails(user);
-                    // Fetch user address
-                    fetchUserAddress(user.getAddressID());
                 }
             });
 
@@ -106,6 +105,9 @@ public class ViewPostActivity extends AppCompatActivity {
                     viewPager.setAdapter(adapter);
                 }
             });
+
+            // Fetch current user's address
+            fetchCurrentUserAddress();
         } catch (Exception e) {
             Log.e("ViewPostActivity", "Error in onCreate: ", e);
         }
@@ -200,8 +202,44 @@ public class ViewPostActivity extends AppCompatActivity {
                 // Prepare functionality for proceed button
                 createOrder();
             });
+
         } catch (Exception e) {
             Log.e("ViewPostActivity", "Error in setupUI: ", e);
+        }
+    }
+
+    private void fetchCurrentUserAddress() {
+        try {
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("users").document(currentUserID).get().addOnSuccessListener(documentSnapshot -> {
+                if (documentSnapshot.exists()) {
+                    String addressID = documentSnapshot.getString("addressID");
+                    if (addressID != null) {
+                        fetchUserAddress(addressID); // Fetch address using addressID
+                    }
+                }
+            }).addOnFailureListener(e -> Log.e("ViewPostActivity", "Error fetching current user address: ", e));
+        } catch (Exception e) {
+            Log.e("ViewPostActivity", "Error in fetchCurrentUserAddress: ", e);
+        }
+    }
+
+    private void fetchUserAddress(String addressID) {
+        try {
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("addresses").document(addressID).get().addOnSuccessListener(documentSnapshot -> {
+                if (documentSnapshot.exists()) {
+                    Address address = documentSnapshot.toObject(Address.class);
+                    if (address != null) {
+                        deliveryAddress = address.getHouseStreet() + ", " +
+                                address.getBarangay() + ", " +
+                                address.getMunicipality() + ", " +
+                                address.getProvince();
+                    }
+                }
+            }).addOnFailureListener(e -> Log.e("ViewPostActivity", "Error fetching user address: ", e));
+        } catch (Exception e) {
+            Log.e("ViewPostActivity", "Error in fetchUserAddress: ", e);
         }
     }
 
@@ -214,7 +252,7 @@ public class ViewPostActivity extends AppCompatActivity {
                 darkBackground.setVisibility(View.VISIBLE); // Show dark background
 
                 // Set default values
-                editAddressEditText.setText(deliveryAddress);
+                editAddressEditText.setText(deliveryAddress); // Set the current user's delivery address
                 productQuantityEditText.setText("1");
                 updateTotalPrice(1);
             }
@@ -249,7 +287,6 @@ public class ViewPostActivity extends AppCompatActivity {
             productDescription.setText(post.getDescription());
 
             postPrice = post.getPrice();
-            deliveryAddress = currentUserProvince; // Assume delivery address is same as user province for now
 
             // Update deadline counter
             long currentTime = System.currentTimeMillis();
@@ -316,25 +353,6 @@ public class ViewPostActivity extends AppCompatActivity {
         }
     }
 
-    private void fetchUserAddress(String addressID) {
-        try {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            db.collection("addresses").document(addressID).get().addOnSuccessListener(documentSnapshot -> {
-                if (documentSnapshot.exists()) {
-                    Address address = documentSnapshot.toObject(Address.class);
-                    if (address != null) {
-                        deliveryAddress = address.getHouseStreet() + ", " +
-                                address.getBarangay() + ", " +
-                                address.getMunicipality() + ", " +
-                                address.getProvince();
-                    }
-                }
-            }).addOnFailureListener(e -> Log.e("ViewPostActivity", "Error fetching user address: ", e));
-        } catch (Exception e) {
-            Log.e("ViewPostActivity", "Error in fetchUserAddress: ", e);
-        }
-    }
-
     private void updateTotalPrice(int quantity) {
         try {
             double totalPrice = quantity * postPrice;
@@ -377,7 +395,6 @@ public class ViewPostActivity extends AppCompatActivity {
             Log.e("ViewPostActivity", "Error in createOrder: ", e);
         }
     }
-
 
     private void updatePostJoinedUserIDs(String postID, Runnable onSuccess) {
         try {

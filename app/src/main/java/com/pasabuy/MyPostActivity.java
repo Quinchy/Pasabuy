@@ -180,6 +180,11 @@ public class MyPostActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
+        TextView dialogTitle = dialogView.findViewById(R.id.dialogTitle);
+        TextView dialogMessage = dialogView.findViewById(R.id.dialogMessage);
+        dialogTitle.setText("Delete Post");
+        dialogMessage.setText("Are you sure you want to delete this post? This action cannot be undone.");
+
         Button yesButton = dialogView.findViewById(R.id.yesButton);
         Button noButton = dialogView.findViewById(R.id.noButton);
 

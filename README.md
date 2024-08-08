@@ -4,15 +4,15 @@
   </a>
 </div>
 
-## About
+# About
 
-### Title
+### Title:
 Pasabuy
 
-### Description
+### Description:
 Pasabuy is a peer-to-peer delivery platform that allows users to either post pasabuy or join existing posts made by others.
 
-## Features
+# Features
 
 • Post Items or Foods
 • Account and Profile Management

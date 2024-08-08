@@ -1,6 +1,9 @@
+<div align="center">
 # Project Name
-
-![Logo](https://i.imgur.com/6QGX8a7.png)
+  <a href="https://i.imgur.com/2EtlC1f.png">
+    <img src="https://i.imgur.com/6QGX8a7.png" alt="Logo">
+  </a>
+</div>
 
 ## About
 

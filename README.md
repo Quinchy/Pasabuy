@@ -32,4 +32,7 @@ Pasabuy is a peer-to-peer delivery platform that allows users to either post pas
 
 ## Screenshots
 
-![Screenshot 3](https://i.imgur.com/50YhjDC.png)
+![Screenshot](https://i.imgur.com/50YhjDC.png)
+![Screenshot](https://i.imgur.com/wKoFZ26.png)
+![Screenshot](https://i.imgur.com/3NAkqpL.png)
+![Screenshot](https://i.imgur.com/ltRyv1v.png)

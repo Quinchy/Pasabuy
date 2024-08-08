@@ -1,6 +1,6 @@
 # Project Name
 
-![Logo]([./images/logo.png](https://i.imgur.com/6QGX8a7.png))
+![Logo](https://i.imgur.com/6QGX8a7.png)
 
 ## About
 

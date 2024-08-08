@@ -15,12 +15,19 @@ Pasabuy is a peer-to-peer delivery platform that allows users to either post pas
 # Features
 
 • Post Items or Foods
+<br />
 • Account and Profile Management
+<br />
 • Ask for Pasabuy
+<br />
 • Sell and Deliver
+<br />
 • Manage Your Pasabuy Posts
+<br />
 • Messaging
+<br />
 • Track Orders
+<br />
 • Rating
 
 ## Screenshots

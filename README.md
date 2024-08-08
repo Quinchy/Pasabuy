@@ -1,8 +1,4 @@
 <div align="center">
-  # Project Name
-</div>
-
-<div align="center">
   <a href="https://i.imgur.com/2EtlC1f.png">
     <img src="https://i.imgur.com/6QGX8a7.png" alt="Logo">
   </a>
@@ -11,21 +7,21 @@
 ## About
 
 ### Title
-A brief description of the project. This section provides an overview of what the project is about and its main objectives.
+Pasabuy
 
 ### Description
-This project is designed to solve [specific problem]. It utilizes [technologies/techniques] to achieve [goal/outcome]. Key features include [feature1], [feature2], and [feature3]. The aim is to provide [benefit] to [target audience].
+Pasabuy is a peer-to-peer delivery platform that allows users to either post pasabuy or join existing posts made by others.
 
 ## Features
 
-### Feature Title 1
-A description of the first feature. Explain what it does, how it works, and why it is useful.
-
-### Feature Title 2
-A description of the second feature. Highlight its importance and how it enhances the project.
-
-### Feature Title 3
-A description of the third feature. Describe its functionality and the benefits it brings to users.
+• Post Items or Foods
+• Account and Profile Management
+• Ask for Pasabuy
+• Sell and Deliver
+• Manage Your Pasabuy Posts
+• Messaging
+• Track Orders
+• Rating
 
 ## Screenshots
 

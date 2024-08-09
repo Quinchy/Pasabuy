@@ -10,7 +10,7 @@
 Pasabuy
 
 ### Description:
-Pasabuy is a peer-to-peer delivery platform that allows users to either post pasabuy or join existing posts made by others.
+Pasabuy is a peer-to-peer delivery platform that allows users to either post pasabuy or join existing posts made by others. Inspired by the traditional concept of 'Pasabuy,' this app brings the convenience of this community-driven service to a dedicated digital platform, allowing users to effortlessly coordinate and share delivery tasks. This app is built in Android Studio using Java, and Firebase for the Database and App Hosting.
 
 # Features
 

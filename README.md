@@ -32,6 +32,7 @@ Pasabuy is a peer-to-peer delivery platform that allows users to either post pas
 
 ## Screenshots
 
+Figma: https://www.figma.com/design/NYfBJvGrA9tyBGmN56Llum/PasaBuy-Mobile-Application?node-id=0-1&t=Y9IRYU1SOWhMgBJe-1
 ![Screenshot](https://i.imgur.com/50YhjDC.png)
 ![Screenshot](https://i.imgur.com/wKoFZ26.png)
 ![Screenshot](https://i.imgur.com/3NAkqpL.png)
